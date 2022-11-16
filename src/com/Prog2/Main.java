@@ -4,10 +4,17 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] arr = {3, 0, 1, 8, 7, 2, 5, 4, 9, 6};
-        HungarianQS(arr, 0, arr.length - 1);
-        System.out.println("Sorted array: ");
-        printArray(arr, arr.length);
+        //int[] arr = {3, 0, 1, 8, 7, 2, 5, 4, 9, 6};
+        int[] inputArray10k = new int[10000];
+        for (int i = 0; i < inputArray10k.length; i++){
+            inputArray10k[i] = i;
+        }
+        long start = System.currentTimeMillis();
+        HungarianQS(inputArray10k, 0, inputArray10k.length - 1);
+        long end = System.currentTimeMillis();
+        //System.out.println("Sorted array: ");
+        //printArray(inputArray10k, inputArray10k.length);
+        System.out.println((end - start) + " ms");
     }
 
     public static int partition(int[] arr, int low, int high){
