@@ -7,24 +7,18 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Integer[] arr = {3, 0, 1, 8, 7, 2, 4, 4, 9, 6};
-        /*int[] inputArray10k = new int[10000];
-        for (int i = 0; i < inputArray10k.length; i++){
-            inputArray10k[i] = i;
-        }*/
-        //long start = System.currentTimeMillis();
-        /*Integer[] arr = new Integer[1000];
+        //Integer[] arr = {3, 0, 1, 8, 7, 2, 4, 4, 9, 6}; //Array that was used in the video.
+        Integer[] arr = new Integer[100000]; //10K, 20K... 100K Part.
         for (int i = 0; i < arr.length; i++) {
             arr[i] = i;
-        }*/
-        //Collections.shuffle(Arrays.asList(arr));
-        System.out.println(Arrays.toString(arr));
+        }
+        Collections.shuffle(Arrays.asList(arr));
+        //System.out.println(Arrays.toString(arr));
+        long start = System.currentTimeMillis();
         HungarianQS(arr, 0, arr.length - 1);
-        System.out.println(Arrays.toString(arr));
-        //long end = System.currentTimeMillis();
-        //System.out.println("Sorted array: ");
-        //printArray(inputArray10k, inputArray10k.length);
-        //System.out.println((end - start) + " ms");
+        long end = System.currentTimeMillis();
+        //System.out.println(Arrays.toString(arr));
+        System.out.println((end - start) + " ms");
     }
 
     public static int partition(Integer[] arr, int low, int high){
